@@ -3,13 +3,14 @@
 
 int init()
 {
-    int process_code = SDL_Init(SDL_INIT_EVERYTHING);
+    if(SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO) != 0)
+    {
+        printf("Could not initialize SDL.\n %s\n", SDL_GetError());
+        return -1;
+    }
 
-    if(process_code)
-        printf("SDL initialized.");
-    else
-        printf("Could not initialize SDL.\nError code: %i", process_code);
-    return process_code;
+    printf("SDL initialized.\n");
+    return 0;
 }
 
 SDL_Window* create_window(int h, int w)
@@ -18,12 +19,6 @@ SDL_Window* create_window(int h, int w)
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         h, w, 0);
-
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
-    
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-    SDL_RenderPresent(renderer);
 
     return window;
 }
