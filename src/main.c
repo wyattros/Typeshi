@@ -16,7 +16,7 @@ int main()
         return init_code;
 
     AudioData ad;
-    int load_code = load_file("faint.wav", &ud, &ad);
+    int load_code = load_file("/home/coffeedrinker/Repositories/Typeshi/src/faint.wav", &ud, &ad);
     if (load_code)
         return load_code;
 
@@ -35,7 +35,6 @@ int main()
             if (event.type == SDL_QUIT) 
             {
                 running = 0;
-                sdl_quit(&ad);
             }
         }
 
@@ -52,5 +51,7 @@ int main()
         SDL_RenderPresent(renderer);
     }
 
+    sdl_quit(&ad, renderer, window);
+    
     return 0;
 }

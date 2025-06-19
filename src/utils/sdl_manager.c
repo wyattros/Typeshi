@@ -14,21 +14,23 @@ int sdl_init()
     return 0;
 }
 
-int sdl_quit(AudioData* ad)
+int sdl_quit(AudioData* ad, SDL_Renderer* renderer, SDL_Window* window)
 {
     SDL_CloseAudio();
     SDL_FreeWAV(ad->buffer);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
     SDL_Quit();
 
     return 0;
 }
 
-SDL_Window* create_window(int h, int w)
+SDL_Window* create_window(int w, int h)
 {
     SDL_Window* window = SDL_CreateWindow("Typesh!",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
-        h, w, 0);
+        w, h, 0);
 
     return window;
 }

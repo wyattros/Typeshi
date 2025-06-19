@@ -9,7 +9,7 @@
 #define WINDOW_HEIGHT 1080
 
 int sdl_init();
-int sdl_quit(AudioData* ad);
+int sdl_quit(AudioData* ad, SDL_Renderer* renderer, SDL_Window* window);
 SDL_Window* create_window(int h, int w);
 SDL_Renderer* create_renderer(SDL_Window* window);
 
