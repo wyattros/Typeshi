@@ -18,7 +18,6 @@ cd build/
 -  -g x Let's you define the gap between each bars (in pixels)
 
 # Demo
-[![Demo video](assets/images/circular.png)](assets/videos/demo.mp4)
-![Flat bars](assets/images/flat.png)
-![Circular bars](assets/images/circular.png)
-![Desktop](assets/images/desktop.png)
+| Flat                            | Circular                                | On a desktop                   |
+| ------------------------------------ | -------------------------------------------- | ------------------------------------- |
+| ![Flat bars](assets/images/flat.png) | ![Circular bars](assets/images/circular.png) | ![Desktop](assets/images/desktop.png) |
