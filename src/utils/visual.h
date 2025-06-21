@@ -2,6 +2,7 @@
 #define VISUAL_H
 
 #include <SDL2/SDL.h>
+#include <math.h>
 
 #define RADIUS 200
 #define PI 4.0 * atan(1.0)

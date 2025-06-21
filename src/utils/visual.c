@@ -3,6 +3,7 @@
 #include "visual.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <math.h>
 
 void draw_rectangle(SDL_Renderer* renderer, point a, point b, point c, point d)
 {
