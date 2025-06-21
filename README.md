@@ -3,7 +3,7 @@
 # Installation
 ```sh
 git clone https://github.com/wyattros/Typeshi.git
-make
+cd Typeshi && make
 ```
 
 # Use
@@ -16,3 +16,9 @@ cd build/
 -  -f Enables the fade effect
 -  -b x Let's you define the number of bars
 -  -g x Let's you define the gap between each bars (in pixels)
+
+# Demo
+[![Demo video](assets/images/circular.png)](assets/videos/demo.mp4)
+![Flat bars](assets/images/flat.png)
+![Circular bars](assets/images/circular.png)
+![Desktop](assets/images/desktop.png)
