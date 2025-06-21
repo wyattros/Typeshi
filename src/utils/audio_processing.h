@@ -6,10 +6,12 @@
 
 #define BUFFER_SIZE 8192
 #define SAMPLE_SIZE 1920
-#define RECTANGLE_COUNT 1920
+#define DEFAULT_RECTANGLE_COUNT 100
 #define AVG_COUNT (SAMPLE_SIZE / RECTANGLE_COUNT)
 #define AMPLIFY_POWER 500.0f
 #define SMOOTHING_FACTOR 0.005f
+
+extern int RECTANGLE_COUNT;
 
 typedef struct userdata 
 {

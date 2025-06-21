@@ -9,7 +9,7 @@ void audio_callback(void* userdata, Uint8* stream, int len)
     if (ud->position == 0)
         return;
 
-    len = ( len > ud->length ? ud->length : len );
+    len = ( len > (int)ud->length ? (int)ud->length : len );
     SDL_memcpy(stream, ud->position, len);
 
     ud->position += len;
@@ -62,7 +62,8 @@ int create_samples(float* smoothed_samples, float* input_samples, int16_t* temp_
     for (int i = 0; i < RECTANGLE_COUNT; i++) 
     {
         float sum = 0.0f;
-        for (int j = 0; j < AVG_COUNT; j++) {
+        for (int j = 0; j < AVG_COUNT; j++) 
+        {
             int sample = temp_samples[i * AVG_COUNT + j];
             sum += fabs(sample / 32768.0f);
         }
